@@ -1,0 +1,534 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Sflight"
+    android:orientation="vertical">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/teal_200" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FlightDetails"
+            android:textStyle="bold"
+            android:textSize="20dp">
+
+        </TextView>
+    </androidx.appcompat.widget.Toolbar>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+        <TextView
+            android:layout_marginTop="20dp"
+            android:id="@+id/t1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Airline"
+            android:textSize="20dp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/t2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="dept"
+            android:layout_marginStart="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_alignBaseline="@+id/t1"
+            android:layout_toRightOf="@+id/t1"
+            android:textSize="20dp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/t3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="time"
+            android:layout_marginStart="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_alignBaseline="@+id/t1"
+            android:textSize="20dp"
+            android:layout_toRightOf="@+id/t2">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/t4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="arr"
+            android:layout_alignBaseline="@+id/t1"
+            android:layout_toRightOf="@+id/t3"
+            android:layout_marginStart="30dp"
+            android:layout_marginLeft="30dp">
+
+        </TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/t4"
+            android:text="Price"
+            android:layout_toRightOf="@+id/t4"
+            android:layout_marginStart="80dp"
+            android:layout_marginLeft="30dp"
+            android:layout_alignBaseline="@+id/t1">
+
+
+        </TextView>
+    </RelativeLayout>
+
+<!--<androidx.recyclerview.widget.RecyclerView-->
+<!--    android:id="@+id/recycleView"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent">-->
+<!--    <include layout="@layout/layout" />-->
+<!--</androidx.recyclerview.widget.RecyclerView>-->
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="6dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginEnd="6dp"
+        app:cardCornerRadius="8dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp"
+            android:id="@+id/rel_personal">
+
+            <ImageView
+                android:id="@+id/flightImage"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:contentDescription="@string/flightImage"
+                android:src="@drawable/asia"
+                android:layout_marginLeft="8dp" />
+
+            <TextView
+                android:id="@+id/flight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/flightImage"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/flight" />
+
+            <TextView
+                android:id="@+id/deptTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="40dp"
+                android:text="@string/_20_00"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                android:layout_toRightOf="@id/flightImage"
+                android:layout_marginLeft="50dp" />
+
+            <ImageView
+                android:id="@+id/arrow"
+                android:layout_width="54dp"
+                android:layout_height="26dp"
+                android:layout_centerVertical="true"
+                android:layout_alignEnd="@+id/tCode"
+                android:layout_alignRight="@+id/tCode"
+                android:layout_marginStart="-20dp"
+                android:layout_marginLeft="21dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_toEndOf="@id/deptTime"
+                android:layout_toRightOf="@id/deptTime"
+                android:contentDescription="@string/arrow"
+                android:src="@drawable/arrow" />
+
+            <TextView
+                android:id="@+id/arrTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="-40dp"
+                android:layout_marginLeft="-6dp"
+                android:layout_toEndOf="@id/arrow"
+                android:layout_toRightOf="@id/arrow"
+                android:text="@string/_21_00"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
+
+            <TextView
+                android:id="@+id/frCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/deptTime"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="24dp"
+                android:layout_toEndOf="@id/flightImage"
+                android:text="@string/MYQ"
+                android:layout_marginLeft="60dp"
+                android:layout_toRightOf="@id/flightImage" />
+
+            <TextView
+                android:id="@+id/hrs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/arrow"
+                android:layout_alignBaseline="@id/frCode"
+                android:layout_marginStart="27dp"
+                android:layout_toEndOf="@id/frCode"
+                android:text="@string/_2"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                android:layout_marginLeft="0dp"
+                android:layout_toRightOf="@id/frCode" />
+
+
+            <TextView
+                android:id="@+id/hrsText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/arrow"
+                android:layout_alignBaseline="@id/hrs"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="3dp"
+                android:layout_toEndOf="@id/hrs"
+                android:layout_toRightOf="@id/hrs"
+                android:text="@string/hrs"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
+
+            <TextView
+                android:id="@+id/tCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/arrTime"
+                android:layout_alignBaseline="@id/hrsText"
+                android:layout_marginStart="16dp"
+                android:layout_toEndOf="@id/hrsText"
+                android:text="@string/BLR"
+                android:layout_marginLeft="16dp"
+                android:layout_toRightOf="@id/hrsText" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/price"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                android:layout_marginEnd="20dp"
+                android:text="@string/_21_001"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="0dp" />
+
+
+
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="6dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginEnd="6dp"
+        app:cardCornerRadius="8dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp"
+            >
+
+            <ImageView
+                android:id="@+id/flightImage2"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:contentDescription="@string/flightImage"
+                android:src="@drawable/ind"
+                android:layout_marginLeft="8dp" />
+
+            <TextView
+                android:id="@+id/flight2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/flightImage2"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/flight2"
+                android:layout_marginLeft="8dp" />
+
+            <TextView
+                android:id="@+id/deptTime2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="40dp"
+                android:text="@string/_20_00"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                android:layout_toRightOf="@id/flightImage2"
+                android:layout_marginLeft="50dp" />
+
+            <ImageView
+                android:id="@+id/arrow2"
+                android:layout_width="54dp"
+                android:layout_height="26dp"
+                android:layout_centerVertical="true"
+                android:layout_alignEnd="@+id/tCode2"
+                android:layout_alignRight="@+id/tCode2"
+                android:layout_marginStart="-20dp"
+                android:layout_marginLeft="21dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_toEndOf="@id/deptTime2"
+                android:layout_toRightOf="@id/deptTime2"
+                android:contentDescription="@string/arrow"
+                android:src="@drawable/arrow" />
+
+            <TextView
+                android:id="@+id/arrTime2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="-40dp"
+                android:layout_marginLeft="-6dp"
+                android:layout_toEndOf="@id/arrow2"
+                android:layout_toRightOf="@id/arrow2"
+                android:text="@string/_21_00"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
+
+            <TextView
+                android:id="@+id/frCode2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/deptTime2"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="24dp"
+                android:layout_toEndOf="@id/flightImage2"
+                android:text="@string/MYQ"
+                android:layout_marginLeft="60dp"
+                android:layout_toRightOf="@id/flightImage2" />
+
+            <TextView
+                android:id="@+id/hrs2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/arrow2"
+                android:layout_alignBaseline="@id/frCode2"
+                android:layout_marginStart="27dp"
+                android:layout_toEndOf="@id/frCode2"
+                android:text="@string/_2"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                android:layout_marginLeft="0dp"
+                android:layout_toRightOf="@id/frCode2" />
+
+
+            <TextView
+                android:id="@+id/hrsText2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/arrow2"
+                android:layout_alignBaseline="@id/hrs2"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="3dp"
+                android:layout_toEndOf="@id/hrs2"
+                android:layout_toRightOf="@id/hrs2"
+                android:text="@string/hrs"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
+
+            <TextView
+                android:id="@+id/tCode2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/arrTime2"
+                android:layout_alignBaseline="@id/hrsText2"
+                android:layout_marginStart="16dp"
+                android:layout_toEndOf="@id/hrsText2"
+                android:text="@string/BLR"
+                android:layout_marginLeft="16dp"
+                android:layout_toRightOf="@id/hrsText2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/price2"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                android:layout_marginEnd="20dp"
+                android:text="@string/_1800"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="0dp" />
+
+
+
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="6dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginEnd="6dp"
+        app:cardCornerRadius="8dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp">
+
+            <ImageView
+                android:id="@+id/flightImage3"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:contentDescription="@string/flightImage"
+                android:src="@drawable/vistara"
+                android:layout_marginLeft="8dp" />
+
+            <TextView
+                android:id="@+id/flight3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/flightImage3"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/flight"
+                android:layout_marginLeft="8dp" />
+
+            <TextView
+                android:id="@+id/deptTime3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="40dp"
+                android:text="@string/_20_00"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                android:layout_toRightOf="@id/flightImage3"
+                android:layout_marginLeft="50dp" />
+
+            <ImageView
+                android:id="@+id/arrow3"
+                android:layout_width="54dp"
+                android:layout_height="26dp"
+                android:layout_centerVertical="true"
+                android:layout_alignEnd="@+id/tCode3"
+                android:layout_alignRight="@+id/tCode3"
+                android:layout_marginStart="-20dp"
+                android:layout_marginLeft="21dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_toEndOf="@id/deptTime3"
+                android:layout_toRightOf="@id/deptTime3"
+                android:contentDescription="@string/arrow"
+                android:src="@drawable/arrow" />
+
+            <TextView
+                android:id="@+id/arrTime3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="-40dp"
+                android:layout_marginLeft="-6dp"
+                android:layout_toEndOf="@id/arrow3"
+                android:layout_toRightOf="@id/arrow3"
+                android:text="@string/_21_00"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
+
+            <TextView
+                android:id="@+id/frCode3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/deptTime3"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="24dp"
+                android:layout_toEndOf="@id/flightImage3"
+                android:text="@string/MYQ"
+                android:layout_marginLeft="60dp"
+                android:layout_toRightOf="@id/flightImage3" />
+
+            <TextView
+                android:id="@+id/hrs3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/arrow3"
+                android:layout_alignBaseline="@id/frCode3"
+                android:layout_marginStart="27dp"
+                android:layout_toEndOf="@id/frCode3"
+                android:text="@string/_2"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                android:layout_marginLeft="0dp"
+                android:layout_toRightOf="@id/frCode3" />
+
+
+            <TextView
+                android:id="@+id/hrsText3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/arrow3"
+                android:layout_alignBaseline="@id/hrs3"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="3dp"
+                android:layout_toEndOf="@id/hrs3"
+                android:layout_toRightOf="@id/hrs3"
+                android:text="@string/hrs"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
+
+            <TextView
+                android:id="@+id/tCode3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/arrTime3"
+                android:layout_alignBaseline="@id/hrsText3"
+                android:layout_marginStart="16dp"
+                android:layout_toEndOf="@id/hrsText3"
+                android:text="@string/BLR"
+                android:layout_marginLeft="16dp"
+                android:layout_toRightOf="@id/hrsText3" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/price3"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                android:layout_marginEnd="20dp"
+                android:text="@string/_20001"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="0dp" />
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+
+
+</LinearLayout>
